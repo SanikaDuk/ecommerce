@@ -1,0 +1,204 @@
+@import "tailwindcss";
+:root {
+  --bg: #F2EDE6;
+  --surface: #EDE6DA;
+  --card: #E8E0D0;
+  --raised: #EFEBE2;
+  --shadow-d: #C8BFB0;
+  --shadow-l: #FDFAF5;
+  --accent: #8B6914;
+  --accent2: #5C3D1E;
+  --text: #1A1208;
+  --muted: #7A6A55;
+  --seam: #C4B99A;
+
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Skeuomorphic Card Utility */
+.skeu-card {
+  background: linear-gradient(145deg, #EFEBE2, #E0D8C8);
+  box-shadow: 6px 6px 14px #C8BFB0, -4px -4px 10px #FDFAF5;
+  border: 1px solid rgba(196,185,154,0.4);
+  border-radius: 4px;
+}
+
+.skeu-card-hover:hover {
+  box-shadow: 8px 8px 20px #C8BFB0, -6px -6px 14px #FDFAF5;
+}
+
+/* Skeuomorphic Button */
+.skeu-btn {
+  background: linear-gradient(160deg, #A07820, #6B4F10);
+  box-shadow: 3px 3px 8px #9A7A30, -2px -2px 6px #C8A84C, inset 0 1px 0 rgba(255,220,120,0.3);
+  color: #FFF8E7;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 300;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  padding: 12px 28px;
+  transition: all 0.15s ease;
+}
+
+.skeu-btn:active {
+  box-shadow: inset 3px 3px 8px #5A3E08;
+}
+
+/* Ghost Button */
+.skeu-btn-ghost {
+  background: transparent;
+  border: 1px solid #8B6914;
+  box-shadow: 2px 2px 6px #C8BFB0, -1px -1px 4px #FDFAF5;
+  color: #8B6914;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  font-weight: 300;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 12px 28px;
+  transition: all 0.15s ease;
+}
+
+/* Inset Input */
+.skeu-input {
+  background: #E4DDD0;
+  box-shadow: inset 3px 3px 7px #C8BFB0, inset -2px -2px 5px #F5F0E8;
+  border: 1px solid #C4B99A;
+  border-radius: 3px;
+  color: #1A1208;
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  padding: 12px 16px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.skeu-input:focus {
+  border-color: #8B6914;
+}
+
+.skeu-input::placeholder {
+  color: #7A6A55;
+  opacity: 0.6;
+}
+
+/* Skeuomorphic Tag/Badge */
+.skeu-tag {
+  background: linear-gradient(135deg, #D4C49A, #BEA978);
+  box-shadow: 2px 2px 5px #A89060, -1px -1px 3px #EDD98A;
+  color: #3A2A08;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 300;
+  padding: 3px 10px;
+  border-radius: 2px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Stitch divider */
+.stitch-divider {
+  border-top: 2px dashed #C4B99A;
+  opacity: 0.5;
+}
+
+/* Fabric texture background */
+.fabric-bg {
+  background-color: #F2EDE6;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(196,185,154,0.08) 2px,
+      rgba(196,185,154,0.08) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(196,185,154,0.08) 2px,
+      rgba(196,185,154,0.08) 4px
+    );
+}
+
+/* Linen texture */
+.linen-bg {
+  background-color: var(--surface);
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 1px,
+      rgba(196,185,154,0.06) 1px,
+      rgba(196,185,154,0.06) 2px
+    );
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--seam);
+  border-radius: 10px;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Shimmer/Skeleton */
+.animate-shimmer {
+  background: linear-gradient(
+    to right,
+    #E8E0D0 0%,
+    #EDE6DA 50%,
+    #E8E0D0 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
